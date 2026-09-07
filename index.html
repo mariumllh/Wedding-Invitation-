@@ -1,363 +1,685 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content=" Abdelrahman & Nanci Wedding Invitation — Join us as we celebrate the beginning of our forever.">
-    <meta name="theme-color" content="#FAF8F5">
-    
-    <!-- Open Graph Metadata -->
+
+    <meta name="description"
+        content="Abdelrahman & Nanci Wedding Invitation — Join us as we celebrate the beginning of our forever.">
+
+    <meta name="theme-color" content="#F7F1E9">
+
     <meta property="og:title" content="Abdelrahman & Nanci | Wedding Invitation">
-    <meta property="og:description" content="Join us in celebrating our wedding on October 2nd.">
+    <meta property="og:description" content="Join us in celebrating our wedding on October 7th, 2026.">
     <meta property="og:type" content="website">
 
-    <title>Abdelrahman &amp; Nanci | Wedding Invitation</title>
+    <title>Abdelrahman & Nanci | Wedding Invitation</title>
 
-    <!-- Google Fonts -->
+    <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,400&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Montserrat:wght@300;400;500;600&display=swap"
+        rel="stylesheet">
 
     <!-- Lucide Icons -->
     <script src="https://unpkg.com/lucide@latest"></script>
 
-    <!-- Main Stylesheet -->
-    <link rel="stylesheet" href="index2.css">
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="index.css">
 </head>
+
 <body>
 
-    <!-- Canvas for Floating Flower Petals Effect -->
-    <canvas id="petals-canvas"></canvas>
+    <!-- =========================================
+         FALLING PETALS
+    ========================================== -->
+    <canvas id="petals-canvas" aria-hidden="true"></canvas>
 
-    <!-- Floating Audio Toggle Button -->
-    <button id="audio-toggle" class="floating-audio-btn" aria-label="Toggle Background Music">
+
+    <!-- =========================================
+         AUDIO BUTTON
+    ========================================== -->
+    <button id="audio-toggle"
+        class="floating-audio-btn"
+        aria-label="Toggle Background Music">
+
         <i data-lucide="music" class="music-icon"></i>
         <span class="audio-pulse"></span>
-    </button>
-   <!-- Inside index.html (Lines 22-24) -->
-<audio id="bg-music" loop preload="auto">
-    <!-- تأكد إن الملف موجود في نفس المسار ده أو حط الرابط المباشر -->
-    <source src="music/شيرين_ياليلة_بيضا_بدون_موسيقى_دفوف_فقط.mp3" type="audio/mpeg">
-</audio>
 
-    <!-- Floating Language Switcher -->
+    </button>
+
+
+    <!-- =========================================
+         BACKGROUND MUSIC
+    ========================================== -->
+    <audio id="bg-music" loop preload="auto">
+        <source
+            src="music/شيرين_ياليلة_بيضا_بدون_موسيقى_دفوف_فقط.mp3"
+            type="audio/mpeg">
+    </audio>
+
+
+    <!-- =========================================
+         LANGUAGE SWITCHER
+    ========================================== -->
     <div class="lang-switcher-container">
-        <button id="lang-toggle-btn" class="lang-toggle-btn" aria-label="Switch Language">
-            <span class="lang-label active" data-lang-code="en">EN</span>
+
+        <button
+            id="lang-toggle-btn"
+            class="lang-toggle-btn"
+            aria-label="Switch Language">
+
+            <span
+                class="lang-label active"
+                data-lang-code="en">
+                EN
+            </span>
+
             <span class="lang-divider">|</span>
-            <span class="lang-label" data-lang-code="ar">عربي</span>
+
+            <span
+                class="lang-label"
+                data-lang-code="ar">
+                عربي
+            </span>
+
         </button>
+
     </div>
 
-    <!-- Floating Navigation Bar -->
+
+    <!-- =========================================
+         FLOATING NAVIGATION
+    ========================================== -->
     <nav class="floating-nav" id="navbar">
-        <div class="nav-brand"> A &amp; N </div>
-        <button class="nav-hamburger" id="nav-toggle" aria-label="Toggle Menu">
+
+        <div class="nav-brand">
+            A <span>&</span> N
+        </div>
+
+        <button
+            class="nav-hamburger"
+            id="nav-toggle"
+            aria-label="Toggle Menu">
+
             <i data-lucide="menu"></i>
+
         </button>
+
         <ul class="nav-links" id="nav-links">
-            <li><a href="#hero" class="nav-item" data-i18n="navHome">Home</a></li>
-            <li><a href="#story" class="nav-item" data-i18n="navStory">Our Story</a></li>
-            <li><a href="#details" class="nav-item" data-i18n="navDetails">Details</a></li>
-            <li><a href="#gallery" class="nav-item" data-i18n="navGallery">Gallery</a></li>
-            <li><a href="#rsvp" class="nav-item" data-i18n="navRsvp">RSVP</a></li>
+
+            <li>
+                <a href="#hero"
+                    class="nav-item"
+                    data-i18n="navHome">
+                    Home
+                </a>
+            </li>
+
+            <li>
+                <a href="#details"
+                    class="nav-item"
+                    data-i18n="navDetails">
+                    Details
+                </a>
+            </li>
+
+            <li>
+                <a href="#gallery"
+                    class="nav-item"
+                    data-i18n="navGallery">
+                    Gallery
+                </a>
+            </li>
+
         </ul>
+
     </nav>
 
-    <!-- 1. OPENING EXPERIENCE (ENVELOPE SCREEN) -->
+
+    <!-- =========================================
+         OPENING SCREEN
+    ========================================== -->
     <div id="opening-screen" class="opening-screen">
+
+        <div class="opening-decoration decoration-one"></div>
+        <div class="opening-decoration decoration-two"></div>
+
         <div class="envelope-wrapper">
+
             <div class="envelope-card">
-                <div class="monogram-badge"> A &amp; N</div>
-                <p class="greeting-time" id="greeting-time">Good day, you are warmly invited</p>
-                <h1 class="opening-names">Abdelrahman &amp;  Nanci</h1>
-                <p class="opening-subtitle" data-i18n="openingSubtitle">OUR WEDDING INVITATION</p>
+
+                <div class="monogram-badge">
+                    A <span>&</span> N
+                </div>
+
+                <p
+                    class="greeting-time"
+                    id="greeting-time">
+                    Good day, you are warmly invited
+                </p>
+
+                <h1 class="opening-names">
+                    Abdelrahman & Nanci
+                </h1>
+
+                <p
+                    class="opening-subtitle"
+                    data-i18n="openingSubtitle">
+                    OUR WEDDING INVITATION
+                </p>
+
                 <div class="divider-line"></div>
-                <button id="open-invitation-btn" class="btn-opening">
-                    <span data-i18n="openInvitationBtn">OPEN INVITATION</span>
-                    <i data-lucide="heart" class="btn-icon"></i>
+
+                <button
+                    id="open-invitation-btn"
+                    class="btn-opening">
+
+                    <span data-i18n="openInvitationBtn">
+                        OPEN INVITATION
+                    </span>
+
+                    <i
+                        data-lucide="heart"
+                        class="btn-icon">
+                    </i>
+
                 </button>
+
             </div>
+
         </div>
+
     </div>
 
-    <!-- MAIN INVITATION CONTENT -->
+
+    <!-- =========================================
+         MAIN INVITATION
+    ========================================== -->
     <main id="main-content" class="main-content">
 
-        <!-- 2. HERO SECTION -->
+
+        <!-- =====================================
+             HERO
+        ====================================== -->
         <section id="hero" class="hero-section">
+
+            <div class="hero-glow"></div>
+
             <div class="hero-container">
-                <p class="hero-parents-note" data-i18n="heroParentsNote">Together with their families</p>
-                
+
+                <p
+                    class="hero-parents-note"
+                    data-i18n="heroParentsNote">
+                    Together with their families
+                </p>
+
+                <div class="hero-ornament">
+                    <span></span>
+                    <i data-lucide="heart"></i>
+                    <span></span>
+                </div>
+
                 <div class="hero-names-wrap">
-                    <h1 class="hero-name">Abdelrahman </h1>
-                    <span class="hero-ampersand">&amp;</span>
-                    <h1 class="hero-name"> Nanci</h1>
+
+                    <h1 class="hero-name">
+                        Abdelrahman
+                    </h1>
+
+                    <span class="hero-ampersand">
+                        &
+                    </span>
+
+                    <h1 class="hero-name">
+                        Nanci
+                    </h1>
+
                 </div>
 
                 <div class="hero-date-badge">
+
                     <span class="date-line"></span>
-                    <span class="hero-date-text" data-i18n="heroDateText">07 OCTOBER 2026</span>
+
+                    <span
+                        class="hero-date-text"
+                        data-i18n="heroDateText">
+                        07 OCTOBER 2026
+                    </span>
+
                     <span class="date-line"></span>
+
                 </div>
 
                 <div class="hero-actions">
-                    <button id="save-date-btn" class="btn-secondary">
+
+                    <button
+                        id="save-date-btn"
+                        class="btn-secondary">
+
                         <i data-lucide="calendar-plus"></i>
-                        <span data-i18n="saveTheDate">Save The Date</span>
+
+                        <span data-i18n="saveTheDate">
+                            Save The Date
+                        </span>
+
                     </button>
+
                 </div>
 
-                <a href="#story" class="scroll-discover" aria-label="Scroll Down">
-                    <span data-i18n="scrollDiscover">Scroll to discover</span>
-                    <i data-lucide="chevron-down" class="bounce-icon"></i>
+                <a
+                    href="#countdown-section"
+                    class="scroll-discover"
+                    aria-label="Scroll Down">
+
+                    <span data-i18n="scrollDiscover">
+                        Scroll to discover
+                    </span>
+
+                    <i
+                        data-lucide="chevron-down"
+                        class="bounce-icon">
+                    </i>
+
                 </a>
+
             </div>
+
         </section>
 
-        <!-- 3. COUNTDOWN TIMER -->
-        <section class="countdown-section">
+
+        <!-- =====================================
+             COUNTDOWN
+        ====================================== -->
+        <section
+            id="countdown-section"
+            class="countdown-section">
+
             <div class="section-container">
-                <h2 class="section-tag" data-i18n="countdownTag">Counting down to forever</h2>
-                <div id="countdown" class="countdown-grid">
+
+                <h2
+                    class="section-tag"
+                    data-i18n="countdownTag">
+                    Counting down to forever
+                </h2>
+
+                <div
+                    id="countdown"
+                    class="countdown-grid">
+
                     <div class="countdown-box">
                         <span id="days" class="countdown-num">00</span>
-                        <span class="countdown-label" data-i18n="days">DAYS</span>
+                        <span
+                            class="countdown-label"
+                            data-i18n="days">
+                            DAYS
+                        </span>
                     </div>
+
                     <div class="countdown-separator">:</div>
+
                     <div class="countdown-box">
                         <span id="hours" class="countdown-num">00</span>
-                        <span class="countdown-label" data-i18n="hours">HOURS</span>
+                        <span
+                            class="countdown-label"
+                            data-i18n="hours">
+                            HOURS
+                        </span>
                     </div>
+
                     <div class="countdown-separator">:</div>
+
                     <div class="countdown-box">
                         <span id="minutes" class="countdown-num">00</span>
-                        <span class="countdown-label" data-i18n="minutes">MINUTES</span>
+                        <span
+                            class="countdown-label"
+                            data-i18n="minutes">
+                            MINUTES
+                        </span>
                     </div>
+
                     <div class="countdown-separator">:</div>
+
                     <div class="countdown-box">
                         <span id="seconds" class="countdown-num">00</span>
-                        <span class="countdown-label" data-i18n="seconds">SECONDS</span>
+                        <span
+                            class="countdown-label"
+                            data-i18n="seconds">
+                            SECONDS
+                        </span>
                     </div>
+
                 </div>
+
             </div>
+
         </section>
 
-        <!-- 4. LOVE QUOTE SECTION -->
+
+        <!-- =====================================
+             QUOTE
+        ====================================== -->
         <section class="quote-section">
+
             <div class="section-container">
-                <i data-lucide="quote" class="quote-icon"></i>
-                <blockquote class="love-quote" data-i18n="loveQuote">
-                    "Two hearts, one journey, a lifetime of eternal love." 
+
+                <div class="quote-ornament">
+                    <span></span>
+                    <i data-lucide="heart"></i>
+                    <span></span>
+                </div>
+
+                <blockquote
+                    class="love-quote"
+                    data-i18n="loveQuote">
+
+                    "Two hearts, one journey,
+                    a lifetime of eternal love."
+
                 </blockquote>
-                <p class="arabic-verse" data-i18n="arabicVerse">
-                    "وَمِنْ آيَاتِهِ أَنْ خَلَقَ لَكُم مِّنْ أَنفُسِكُمْ أَزْوَاجًا لِّتَسْكُنُوا إِلَيْهَا"
+
+                <p
+                    class="arabic-verse"
+                    data-i18n="arabicVerse">
+
+                    "وَمِنْ آيَاتِهِ أَنْ خَلَقَ لَكُم
+                    مِّنْ أَنفُسِكُمْ أَزْوَاجًا
+                    لِّتَسْكُنُوا إِلَيْهَا"
+
                 </p>
+
             </div>
+
         </section>
 
-        <!-- 5. OUR STORY TIMELINE -->
-        <!-- <section id="story" class="story-section">
+
+        <!-- =====================================
+             EVENT DETAILS
+        ====================================== -->
+        <section
+            id="details"
+            class="details-section">
+
             <div class="section-container">
+
                 <div class="section-header">
-                    <span class="section-sub" data-i18n="storySub">Where it all began</span>
-                    <h2 class="section-title" data-i18n="storyTitle">Our Story</h2>
+
+                    <span
+                        class="section-sub"
+                        data-i18n="detailsSub">
+
+                        Join us for the celebration
+
+                    </span>
+
+                    <h2
+                        class="section-title"
+                        data-i18n="detailsTitle">
+
+                        Event Details
+
+                    </h2>
+
                     <div class="section-line"></div>
+
                 </div>
 
-                <div class="timeline"> -->
-                    <!-- Event 1 -->
-                    <!-- <div class="timeline-item">
-                        <div class="timeline-dot"></div>
-                        <div class="timeline-content">
-                            <span class="timeline-year">2024</span>
-                            <h3 data-i18n="story1Title">The First Encounter</h3>
-                            <p data-i18n="story1Desc">A quiet moment that sparkled a conversation, turning strangers into inseparable soulmates.</p>
-                        </div>
-                    </div> -->
-
-                    <!-- Event 2 -->
-                    <!-- <div class="timeline-item">
-                        <div class="timeline-dot"></div>
-                        <div class="timeline-content">
-                            <span class="timeline-year">2025</span>
-                            <h3 data-i18n="story2Title">The Promise</h3>
-                            <p data-i18n="story2Desc">Hand in hand under the twilight sky, choosing each other for all of life's chapters.</p>
-                        </div>
-                    </div> -->
-
-                    <!-- Event 3 -->
-                    <!-- <div class="timeline-item">
-                        <div class="timeline-dot"></div>
-                        <div class="timeline-content">
-                            <span class="timeline-year">2026</span>
-                            <h3 data-i18n="story3Title">Forever Begins</h3>
-                            <p data-i18n="story3Desc">Surrounded by those we treasure most, we step together into our new lifetime.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section> -->
-
-        <!-- 6. WEDDING DETAILS & CEREMONY/RECEPTION -->
-        <section id="details" class="details-section">
-            <div class="section-container">
-                <div class="section-header">
-                    <span class="section-sub" data-i18n="detailsSub">Join us for the celebration</span>
-                    <h2 class="section-title" data-i18n="detailsTitle">Event Details</h2>
-                    <div class="section-line"></div>
-                </div>
 
                 <div class="events-grid">
-                    <!-- Ceremony Card -->
+
+
+                    <!-- LOCATION -->
                     <div class="event-card">
+
+                        <div class="event-card-top-line"></div>
+
                         <div class="event-icon-badge">
-                            <i data-lucide="sparkles"></i>
+                            <i data-lucide="map-pin"></i>
                         </div>
-                        <h3 class="event-card-title" data-i18n="ceremonyTitle">Wedding Location</h3>
-                        <!-- <p class="event-time"><i data-lucide="clock"></i> <span data-i18n="ceremonyTime">06:00 PM</span></p> -->
-                        <p class="event-venue" data-i18n="ceremonyVenue"> Riviera Wedding Hall</p>
-                        <p class="event-address" data-i18n="ceremonyAddress"> El-Manzala</p>
-                        
-                        <div class="event-card-actions">
-                            <!-- <a id="ceremony-map-btn" href="#" target="_blank" rel="noopener" class="btn-card">
-                                <i data-lucide="map-pin"></i> <span data-i18n="viewLocation">View Location</span>
-                            </a>
-                            <button class="btn-card copy-location-btn" data-location="123 Luxury Avenue, Metropolis">
-                                <i data-lucide="copy"></i> <span data-i18n="copyAddress">Copy Address</span>
-                            </button> -->
-                        </div>
+
+                        <h3
+                            class="event-card-title"
+                            data-i18n="ceremonyTitle">
+
+                            Wedding Location
+
+                        </h3>
+
+                        <p
+                            class="event-venue"
+                            data-i18n="ceremonyVenue">
+
+                            Riviera Wedding Hall
+
+                        </p>
+
+                        <p
+                            class="event-address"
+                            data-i18n="ceremonyAddress">
+
+                            El-Manzala
+
+                        </p>
+
                     </div>
 
-                    <!-- Reception Card -->
+
+                    <!-- CELEBRATION -->
                     <div class="event-card">
+
+                        <div class="event-card-top-line"></div>
+
                         <div class="event-icon-badge">
                             <i data-lucide="glass-water"></i>
                         </div>
-                        <h3 class="event-card-title" data-i18n="receptionTitle">Wedding  Celebration</h3>
-                        <p class="event-time"><i data-lucide="clock"></i> <span data-i18n="receptionTime">08:00 PM</span></p>
-                        <p class="event-dresscode" data-i18n="dressCode">Dress Code: Beige , Baby Pink & Burgundy</p>
-                        <!-- <p class="event-venue" data-i18n="receptionVenue">The Crystal Garden Pavilion</p>
-                        <p class="event-address" data-i18n="receptionAddress">123 Luxury Avenue, Metropolis</p> -->
-                        <!-- <p class="event-dresscode" data-i18n="receptionNote">Music, Fine Dining &amp; Dancing</p> -->
 
-                        <!-- <div class="event-card-actions">
-                            <a id="reception-map-btn" href="#" target="_blank" rel="noopener" class="btn-card">
-                                <i data-lucide="map-pin"></i> <span data-i18n="viewLocation">View Location</span>
-                            </a>
-                        </div> -->
+                        <h3
+                            class="event-card-title"
+                            data-i18n="receptionTitle">
+
+                            Wedding Celebration
+
+                        </h3>
+
+                        <p class="event-time">
+
+                            <i data-lucide="clock"></i>
+
+                            <span data-i18n="receptionTime">
+                                08:00 PM
+                            </span>
+
+                        </p>
+
+                        <p
+                            class="event-dresscode"
+                            data-i18n="dressCode">
+
+                            Dress Code:
+                            Beige, Baby Pink & Burgundy
+
+                        </p>
+
                     </div>
+
                 </div>
+
             </div>
+
         </section>
 
-        <!-- 7. PHOTO GALLERY -->
-        <section id="gallery" class="gallery-section">
+
+        <!-- =====================================
+             GALLERY
+        ====================================== -->
+        <section
+            id="gallery"
+            class="gallery-section">
+
             <div class="section-container">
+
                 <div class="section-header">
-                    <span class="section-sub" data-i18n="gallerySub">Captured Moments</span>
-                    <h2 class="section-title" data-i18n="galleryTitle">Our Moments</h2>
+
+                    <span
+                        class="section-sub"
+                        data-i18n="gallerySub">
+
+                        Captured Moments
+
+                    </span>
+
+                    <h2
+                        class="section-title"
+                        data-i18n="galleryTitle">
+
+                        Our Moments
+
+                    </h2>
+
                     <div class="section-line"></div>
+
                 </div>
 
-                <!-- Asymmetrical Editorial Gallery Layout -->
+
                 <div class="gallery-asymmetric">
-                
-                    <div class="gallery-item item-large" data-img-src="img">
-                        <img src="img/img1.jpg">
-                        <div class="gallery-overlay"><i data-lucide="maximize-2"></i></div>
+
+
+                    <div
+                        class="gallery-item item-large"
+                        data-img-src="img/img1.jpg">
+
+                        <img
+                            src="img/img1.jpg"
+                            alt="Abdelrahman and Nanci moment"
+                            loading="lazy">
+
+                        <div class="gallery-overlay">
+                            <i data-lucide="maximize-2"></i>
+                        </div>
+
                     </div>
-                    <div class="gallery-item item-tall" data-img-src="https://images.unsplash.com/photo-1511285560929-80b456fea0bc?auto=format&fit=crop&w=1200&q=80">
-                        <img src="img/img2.png">
-                        <div class="gallery-overlay"><i data-lucide="maximize-2"></i></div>
+
+
+                    <div
+                        class="gallery-item item-tall"
+                        data-img-src="img/img2.png">
+
+                        <img
+                            src="img/img2.png"
+                            alt="Abdelrahman and Nanci moment"
+                            loading="lazy">
+
+                        <div class="gallery-overlay">
+                            <i data-lucide="maximize-2"></i>
+                        </div>
+
                     </div>
-                    <div class="gallery-item item-standard" data-img-src="https://images.unsplash.com/photo-1522673607200-164d1b6ce486?auto=format&fit=crop&w=1200&q=80">
-                        <img src="img/img7.png">
-                        <div class="gallery-overlay"><i data-lucide="maximize-2"></i></div>
+
+
+                    <div
+                        class="gallery-item item-standard"
+                        data-img-src="img/img7.png">
+
+                        <img
+                            src="img/img7.png"
+                            alt="Abdelrahman and Nanci moment"
+                            loading="lazy">
+
+                        <div class="gallery-overlay">
+                            <i data-lucide="maximize-2"></i>
+                        </div>
+
                     </div>
-                    <div class="gallery-item item-standard" data-img-src="https://images.unsplash.com/photo-1583939003579-730e3918a45a?auto=format&fit=crop&w=1200&q=80">
-                        <img src="img/img8.png">
-                        <div class="gallery-overlay"><i data-lucide="maximize-2"></i></div>
+
+
+                    <!-- <div
+                        class="gallery-item item-standard"
+                        data-img-src="img/img8.png">
+
+                        <img
+                            src="img/img8.png"
+                            alt="Abdelrahman and Nanci moment"
+                            loading="lazy">
+
+                        <div class="gallery-overlay">
+                            <i data-lucide="maximize-2"></i>
+                        </div> -->
+
                     </div>
+
                 </div>
+
             </div>
+
         </section>
 
-        <!-- Lightbox Modal -->
-        <div id="lightbox-modal" class="lightbox-modal" role="dialog" aria-hidden="true">
-            <button id="lightbox-close" class="lightbox-close" aria-label="Close Lightbox">&times;</button>
-            <img id="lightbox-img" src="" alt="Enlarged photo view">
+
+        <!-- =====================================
+             LIGHTBOX
+        ====================================== -->
+        <div
+            id="lightbox-modal"
+            class="lightbox-modal"
+            role="dialog"
+            aria-hidden="true">
+
+            <button
+                id="lightbox-close"
+                class="lightbox-close"
+                aria-label="Close Lightbox">
+
+                &times;
+
+            </button>
+
+            <img
+                id="lightbox-img"
+                src=""
+                alt="Enlarged photo view">
+
         </div>
-
-        <!-- 8. RSVP SECTION -->
-        <!-- <section id="rsvp" class="rsvp-section">
-            <div class="section-container">
-                <div class="section-header">
-                    <span class="section-sub" data-i18n="rsvpSub">Kindly respond by September 1st</span>
-                    <h2 class="section-title" data-i18n="rsvpTitle">Will You Join Us?</h2>
-                    <div class="section-line"></div>
-                </div>
-
-                <div class="rsvp-card-wrapper">
-                    <form id="rsvp-form" class="rsvp-form">
-                        <div class="form-group">
-                            <label for="guest-name" data-i18n="labelName">Full Name</label>
-                            <input type="text" id="guest-name" class="form-control" required placeholder="e.g. Lord & Lady Smith">
-                        </div>
-
-                        <div class="form-row">
-                            <div class="form-group">
-                                <label for="guest-count" data-i18n="labelGuests">Number of Guests</label>
-                                <select id="guest-count" class="form-control">
-                                    <option value="1">1 Guest</option>
-                                    <option value="2">2 Guests</option>
-                                    <option value="3">3 Guests</option>
-                                    <option value="4">4 Guests</option>
-                                </select>
-                            </div> -->
-
-                            <!-- <div class="form-group">
-                                <label for="attendance" data-i18n="labelAttendance">Attendance</label>
-                                <select id="attendance" class="form-control" required>
-                                    <option value="accept" data-i18n="optAccept">Joyfully Accept</option>
-                                    <option value="decline" data-i18n="optDecline">Regretfully Decline</option>
-                                </select>
-                            </div>
-                        </div>
-
-                        <div class="form-group">
-                            <label for="guest-message" data-i18n="labelMessage">Message for the Couple (Optional)</label>
-                            <textarea id="guest-message" class="form-control" rows="3" placeholder="Write your warm wishes..."></textarea>
-                        </div>
-
-                        <button type="submit" class="btn-primary" id="rsvp-submit-btn">
-                            <span data-i18n="confirmRsvp">Confirm RSVP</span>
-                            <i data-lucide="send"></i>
-                        </button>
-                    </form> -->
-
-                    <!-- Success Feedback Card -->
-                    <div id="rsvp-success" class="rsvp-success hidden">
-                        <div class="success-icon"><i data-lucide="check-circle-2"></i></div>
-                        <h3 data-i18n="rsvpSuccessTitle">Thank You!</h3>
-                        <p data-i18n="rsvpSuccessText">Your response has been delightfully received. We look forward to celebrating with you.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
 
     </main>
 
-    <!-- FOOTER -->
+
+    <!-- =========================================
+         FOOTER
+    ========================================== -->
     <footer class="footer">
-        <div class="section-container">
-            <h2 class="footer-names">Abdelrahman &amp; Nanci</h2>
-            <p class="footer-date">07 . 10 . 2026</p>
-            <p class="footer-note" data-i18n="footerNote">With love &amp; gratitude</p>
+
+        <div class="footer-ornament">
+            <span></span>
+            <span class="footer-heart">♥</span>
+            <span></span>
         </div>
+
+        <div class="section-container">
+
+            <h2 class="footer-names">
+                Abdelrahman & Nanci
+            </h2>
+
+            <p class="footer-date">
+                07 . 10 . 2026
+            </p>
+
+            <p
+                class="footer-note"
+                data-i18n="footerNote">
+
+                With love & gratitude
+
+            </p>
+
+        </div>
+
     </footer>
 
-    <!-- JavaScript File -->
-    <script src="main2.js"></script>
+
+    <!-- JavaScript -->
+    <script src="main.js"></script>
+
 </body>
 </html>
